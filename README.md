@@ -1,69 +1,93 @@
-# React + TypeScript + Vite
+# YouTube Clone - React + TypeScript + MUI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive YouTube-style homepage built using React, TypeScript, Material UI (MUI), and Vite.  
+This application fetches real-time video and shorts data from the YouTube Data API v3 and simulates a simplified YouTube UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Video grid showing recommended videos
+- Shorts section with horizontal scrolling
+- Functional search bar with real-time results
+- Responsive layout using Material UI
+- Sidebar navigation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React 18
+- TypeScript
+- Vite
+- Material UI (MUI v5)
+- YouTube Data API v3
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/youtube-clone.git
+cd youtube-clone
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the root of the project:
+
+```
+VITE_YOUTUBE_API_KEY=your_youtube_api_key_here
+```
+
+Get your API key from: https://console.cloud.google.com/
+
+---
+
+## Running the Project Locally
+
+```bash
+npm run dev
+```
+
+Visit: http://localhost:5173
+
+---
+
+## Folder Structure
+
+```
+src/
+├── components/       # Navbar, Sidebar, VideoCard, ShortsCard
+├── pages/            # Home page layout
+├── services/         # API interaction logic
+├── App.tsx
+├── main.tsx
+└── ...
+```
+
+---
+
+## Deployment
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+You can then deploy the output in the `dist/` folder to Netlify, Vercel, or GitHub Pages.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
